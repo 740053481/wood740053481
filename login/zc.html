@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册</title>
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="assets/css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />  
+		<style>
+			a{
+				color:#1E90FF;
+			}
+			a:hover{
+				color:#0000FF;
+			}
+			img{
+				width: 166px;height: 186px;margin-top: 100px;
+			}
+			body{
+				text-align:center;
+				min-width: 1800px;
+			} 
+			#center{
+				margin:0 auto;width:400px;margin-top: 30px;
+			} 
+			#center1{
+				margin:0 auto;width:300px;margin-top: 30px;
+			} 
+			footer{
+				position:absolute;bottom:0;width:100%;height:20px;background-color: #C0C0C0;
+			}
+			span{
+				position: absolute;left: 500px;top: 0;width: 400px;display: none;
+			}
+			#header{
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 50px;
+				background: #000;
+				z-index: 100;
+			}
+			#header a{
+				text-decoration: none;
+				color: #efefef;
+			}
+			#header a:hover{
+				color: #fff;
+			}
+			#header-Bigdiv{
+				min-width: 1200px;
+				width: 60%;
+				margin-left: 20%;
+				background-color: #000;
+				height: 50px;
+			}
+			#header-Bigdiv div{
+				width: 4.4%;
+				height: 50px;
+				background-color: #000;
+				float: left;
+				margin-left: 6%;
+				text-align: center;
+				line-height: 50px;
+				font-size: 25%;
+			}
+			#header-Bigdiv-1{
+				background: url(assets/img/131.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			.info{
+				background: #64CDED url(assets/img/info.png) no-repeat;
+				color: white;
+			}
+			.error{
+				background: #FFECEC url(assets/img/err.png) no-repeat;
+				color: red;
+			}
+			.ok{
+				background: url(assets/img/ok.gif) no-repeat;
+				height: 20px;
+			}
+			.pp{
+				position:relative;
+				bottom: 0px;
+			}
+		</style>
+	</head>
+	<body>
+		<header id="header">
+			<div id="header-Bigdiv">
+				<a href="../sy/sy.html"><div id="header-Bigdiv-1"></div></a>
+				<a href="../xiangqing/Mac.html"><div id="header-Bigdiv-2">Mac</div></a>
+				<a href="../xiangqing/iPad.html"><div id="header-Bigdiv-3">iPad</div></a>
+				<a href="../xiangqing/iPhone.html"><div id="header-Bigdiv-4">iPhone</div></a>
+				<a href="../xiangqing/Watch.html"><div id="header-Bigdiv-5">Watch</div></a>
+				<a href="../xiangqing/Music.html"><div id="header-Bigdiv-6">Music</div></a>
+				<a href="#"><div id="header-Bigdiv-7">技术支持</div></a>
+				<a href="#"><div id="header-Bigdiv-8">搜索</div></a>
+				<a href="../car/car.html"><div id="header-Bigdiv-9">购物车</div></a>
+			</div>
+		</header>
+		<form action="zc.php" method="post">
+		    <div class="header header-primary text-center">
+		        <div class="">
+		            <img src="assets/img/logo.jpg" alt="">
+					<h2>创建您的Apple ID</h2>
+		        </div>
+		    </div>
+			
+		        <div class="input-group form-group-no-border input-lg" id="center">
+		            <text class="input-group-addon">
+		                <i class="now-ui-icons users_circle-08"></i>
+		            </text>
+		            <input type="text" class="form-control" placeholder="Apple ID" id="user" name="username"/>
+					<span class="info">请输入6个字符的用户名，只能由数字和字母组成。</span>
+					<span class="error">请输入正确的用户名！</span>
+					<span class="ok"></span>
+		        </div>
+				
+		        <div class="input-group form-group-no-border input-lg" id="center">
+		            <text class="input-group-addon">
+		                <i class="now-ui-icons text_caps-small"></i>
+		            </text>
+		            <input type="password" placeholder="password" class="form-control" id="password" name="password"/>
+					<span class="info">请输入6-18位密码，只能由数字和字母组成。</span>
+					<span class="error">请输入正确的密码！</span>
+					<span class="ok"></span>
+		        </div>
+				
+				<div class="input-group form-group-no-border input-lg" id="center">
+				    <text class="input-group-addon">
+				        <i class="now-ui-icons text_caps-small"></i>
+				    </text>
+				    <input type="text" placeholder="email" class="form-control" name="email" id="email"/>
+					<span class="info">请输入您的电子邮箱。</span>
+					<span class="error">请输入正确的电子邮箱！</span>
+					<span class="ok"></span>
+				</div>
+				
+				<div class="input-group form-group-no-border input-lg" id="center">
+				    <text class="input-group-addon">
+				        <i class="now-ui-icons text_caps-small"></i>
+				    </text>
+				    <input type="text" placeholder="phone" class="form-control" name="phone" id="phone"/>
+					<span class="info">请输入您的固定电话号码（格式如：0769-*********）或移动电话号码。</span>
+					<span class="error">请输入正确的联系电话！</span>
+					<span class="ok"></span>
+				</div>
+				
+		    <div class="footer text-center" id="center1">
+				<input type="submit" value="注册" class="btn btn-primary btn-round btn-lg btn-block"/>
+				<a href="dl.html"><text>已有Apple ID？快去登录吧。</text></a>
+		    </div>
+			
+			<div>
+				
+			</div>
+			<footer class="pp">
+				  <p class="mb-0">Copyright © 2020 The team reserves all rights</p>
+				</footer>
+		</form>
+	</body>
+	<script src="jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		//用户名验证
+		$("input:eq(0)").focus(function(){
+			$(this).siblings("span").hide();
+			$(this).siblings(".info").show();
+		}).blur(function(){
+			$(this).siblings("span").hide();
+			var checkUser=/^[0-9a-zA-Z]{6}$/;
+			if(checkUser.test($(this).val())){//验证文本框
+				$(this).siblings(".ok").show();
+			} else{
+				$(this).siblings(".error").show();
+			}
+		});
+		//密码验证
+		$("input:eq(1)").focus(function(){
+			$(this).siblings("span").hide();
+			$(this).siblings(".info").show();
+		}).blur(function(){
+			$(this).siblings("span").hide();
+			var checkUser=/^[0-9a-zA-Z]{6,18}$/;
+			if(checkUser.test($(this).val())){//验证文本框
+				$(this).siblings(".ok").show();
+			} else{
+				$(this).siblings(".error").show();
+			}
+		});
+		//电子邮箱验证
+		$("input:eq(2)").focus(function(){
+			$(this).siblings("span").hide();
+			$(this).siblings(".info").show();
+		}).blur(function(){
+			$(this).siblings("span").hide();
+			var checkUser=/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+			if(checkUser.test($(this).val())){//验证文本框
+				$(this).siblings(".ok").show();
+			} else{
+				$(this).siblings(".error").show();
+			}
+		});
+		//电话验证
+		$("input:eq(3)").focus(function(){
+			$(this).siblings("span").hide();
+			$(this).siblings(".info").show();
+		}).blur(function(){
+			$(this).siblings("span").hide();
+			var checkUser=/^(([0-9]{3,4}-)[0-9]{7,8})|(1[3-9][0-9]{9})$/;
+			if(checkUser.test($(this).val())){//验证文本框
+				$(this).siblings(".ok").show();
+			} else{
+				$(this).siblings(".error").show();
+			}
+		});
+	</script>
+</html>

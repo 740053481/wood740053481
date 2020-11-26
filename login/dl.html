@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>登录</title>
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="assets/css/now-ui-kit.css?v=1.1.0" rel="stylesheet" />  
+		<script src="jquery-2.1.1.min.js"></script>
+		<style>
+			a{
+				color:#1E90FF;
+			}
+			a:hover{
+				color:#0000FF;
+			}
+			#header{
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 50px;
+				background: #000;
+				z-index: 100;
+			}
+			#header a{
+				text-decoration: none;
+				color: #efefef;
+			}
+			#header a:hover{
+				color: #fff;
+			}
+			#header-Bigdiv{
+				min-width: 1200px;
+				width: 60%;
+				margin-left: 20%;
+				background-color: #000;
+				height: 50px;
+			}
+			#header-Bigdiv div{
+				width: 4.4%;
+				height: 50px;
+				background-color: #000;
+				float: left;
+				margin-left: 6%;
+				text-align: center;
+				line-height: 50px;
+				font-size: 25%;
+			}
+			#header-Bigdiv-1{
+				background: url(assets/img/131.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			img{
+				width: 166px;
+				height: 186px;
+				margin-top: 100px;
+			}
+			/*icon_checkbox*/
+			.my_protocol .input_agreement_protocol {
+			                appearance: none;
+			                -webkit-appearance: none;
+			                outline: none;
+			                display: none;
+			}
+			/*未选中时*/        
+			.my_protocol .input_agreement_protocol+span {
+			                width: 16px;
+			                height: 16px;
+			                background-color: red;
+			                display: inline-block;
+			                background: url(assets/img/icon_checkbox.png) no-repeat;
+			                background-position-x: 0px;
+			                background-position-y: -25px;
+			                position: relative;
+			                top: 3px;
+			}
+			/*选中checkbox时,修改背景图片的位置*/            
+			.my_protocol .input_agreement_protocol:checked+span {
+			                background-position: 0 0px
+			}
+			#checkbox{
+				margin-top: 20px;
+			}
+			body{
+				text-align:center;
+				min-width: 1800px;
+			} 
+			#center{
+				margin:0 auto;width:400px;margin-top: 30px;
+			} 
+			#center1{
+				margin:0 auto;width:300px;margin-top: 30px;
+			} 
+			footer{
+				position:absolute;bottom:0;width:100%;height:20px;background-color: #C0C0C0;
+			}
+		</style>
+	</head>
+	<body onLoad="loadf()">
+		<header id="header">
+			<div id="header-Bigdiv">
+				<a href="../sy/sy.html"><div id="header-Bigdiv-1"></div></a>
+				<a href="../xiangqing/Mac.html"><div id="header-Bigdiv-2">Mac</div></a>
+				<a href="../xiangqing/iPad.html"><div id="header-Bigdiv-3">iPad</div></a>
+				<a href="../xiangqing/iPhone.html"><div id="header-Bigdiv-4">iPhone</div></a>
+				<a href="../xiangqing/Watch.html"><div id="header-Bigdiv-5">Watch</div></a>
+				<a href="../xiangqing/Music.html"><div id="header-Bigdiv-6">Music</div></a>
+				<a href="#"><div id="header-Bigdiv-7">技术支持</div></a>
+				<a href="#"><div id="header-Bigdiv-8">搜索</div></a>
+				<a href="../car/car.html"><div id="header-Bigdiv-9">购物车</div></a>
+			</div>
+		</header>
+		<form action="login.php" method="post">
+		    <div class="header header-primary text-center">
+		        <div class="">
+		            <img src="assets/img/logo.jpg" alt="">
+		        </div>
+		    </div>
+			
+		        <div class="input-group form-group-no-border input-lg" id="center">
+		            <span class="input-group-addon">
+		                <i class="now-ui-icons users_circle-08"></i>
+		            </span>
+		            <input type="text" class="form-control" placeholder="Apple ID" id="username" name="username" />
+		        </div>
+				
+		        <div class="input-group form-group-no-border input-lg" id="center">
+		            <span class="input-group-addon">
+		                <i class="now-ui-icons text_caps-small"></i>
+		            </span>
+		            <input type="password" placeholder="password" class="form-control" id="password" name="password" />
+		        </div>
+				
+				<div id="checkbox">
+					<label class="my_protocol">
+					      <input class="input_agreement_protocol" type="checkbox" id="isSave" />
+					      <span></span>记住用户名
+					</label>
+				</div>
+				
+		    <div class="footer text-center" id="center1">
+				<input type="submit" id="submit" value="登录" class="btn btn-primary btn-round btn-lg btn-block"/>
+				<a href="zc.html"><span>没有Apple ID？立即注册一个。</span></a>
+		    </div>
+			
+			<div>
+				
+			</div>
+			<footer class="">
+				  <p class="mb-0">Copyright © 2020 The team reserves all rights</p>
+				</footer>
+		</form>
+	</body>
+</html>
+<script>
+		function check(){
+			if(document.getElementById("isSave").checked){
+				var username=document.getElementById("username").value;
+				localStorage.setItem("name",username);
+			}
+		else{
+		     localStorage.setItem("name","");
+		}
+		}
+		function loadf(){
+			var data=localStorage.getItem("name");
+			document.getElementById("username").value=data;
+		}
+		
+		</script>

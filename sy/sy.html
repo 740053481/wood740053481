@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>商城首页</title>
+		 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="js/jquery-1.12.4.js"></script>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			ul{
+				list-style: none;
+			}
+			body{
+				min-width: 1800px;
+				height: 4400px;
+			}
+			#header{
+				position: fixed;
+				top: 0;
+				width: 100%;
+				height: 50px;
+				background: #000;
+				z-index: 100;
+			}
+			#header a{
+				text-decoration: none;
+				color: #efefef;
+			}
+			#header a:hover{
+				color: #fff;
+			}
+			#header-Bigdiv{
+				min-width: 1200px;
+				width: 60%;
+				margin-left: 20%;
+				background-color: #000;
+				height: 50px;
+			}
+			#header-Bigdiv div{
+				width: 4.4%;
+				height: 50px;
+				background-color: #000;
+				float: left;
+				margin-left: 6%;
+				text-align: center;
+				line-height: 50px;
+				font-size: 25%;
+			}
+			#header-Bigdiv-1{
+				background: url(image/131.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			#content{
+				position: relative;
+				top: 70px;
+				width: 100%;
+				height: 4030px;
+				background-color: #fff;
+			}
+			#content-1{
+				width: 100%;
+				height: 800px;
+				background: #0e0e0e;
+				position: relative;
+			}
+			/*轮播图*/
+			.content-1-lb{
+				height: 100%;
+				width: 800px;
+				margin-left: 5%;
+				overflow: hidden;
+				position: relative;
+			}
+			.content-1-lb>ul:first-child{
+				width: 1000%;
+				transform: translateX(-10%);
+			}
+			.content-1-lb>ul:first-child>li{
+				width: 10%;
+				float: left;
+			}
+			.content-1-lb>ul:first-child>li>a{
+				display: block;
+				width: 100%;
+			}
+			.content-1-lb>ul:first-child>li>a>img{
+				display: block;
+				width: 100%;
+			}
+			.content-1-lb>ul:last-child{
+				width: 118px;
+				height: 6px;
+				position: absolute;
+				bottom: 6px;
+				left: 50%;
+				margin-left: -59px;
+			}
+			.content-1-lb>ul:last-child>li{
+				height:9px;
+				width: 9px;
+				float: left;
+				margin-left: 10px;
+				border-radius: 50%;
+				border: 1px solid #0e0e0e;
+			}
+			.content-1-lb>ul:last-child>li:nth-child(1){
+				margin-left: 0;
+			}
+			.content-1-lb>ul:last-child>li.now{
+				background: orange;
+			}
+			/*商品介绍*/
+			.content-1-jieshao{
+				height: 50%;
+				width: 500px;
+				position: absolute;
+				top: 15%;
+				right: 10%;
+				text-align: center;
+				padding-top: 80px;
+			}
+			/*2*/
+			.content-2{
+				position: relative;
+				width: 100%;
+				height: 700px;
+				background-color: #FBFBFB;
+				margin-top: 10px;
+			}
+			.content-2-bg{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 538px;
+				width: 100%;
+				background: url(image/111.jpg) no-repeat;
+				background-size: 100% 100%;
+				background-position: center;
+			}
+			.content-2-jieshao{
+				height: 50%;
+				width: 500px;
+				position: absolute;
+				top: 8%;
+				right: 37%;
+				text-align: center;
+			}
+			/*3*/
+			.content-3{
+				position: relative;
+				width: 100%;
+				height: 736px;
+				background-color: #FBFBFB;
+				margin-top: 10px;
+				overflow: hidden;
+			}
+			.content-3-bg{
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 736px;
+				width: 3010px;
+				background: url(image/9.jpg) no-repeat;
+				background-size: 100% 100%;
+				background-position: -550px -50px;
+			}
+			.content-3-jieshao{
+				height: 50%;
+				width: 500px;
+				position: absolute;
+				top: 8%;
+				right: 37%;
+				text-align: center;
+			}
+			/*4*/
+			.content-4{
+				position: relative;
+				height: 1780px;
+				width: 100%;
+				background-color: #fff;
+				margin-top: 10px;
+			}
+			.content-4-1{
+				position: absolute;
+				top: 10px;
+				left: 10px;
+				width: 49%;
+				height: 575px;
+				background: url(image/161.jpg) no-repeat;
+				background-size: 100% 100%;
+			}
+			.content-4-1-jieshao{
+				height: 30%;
+				width: 49%;
+				position: absolute;
+				top: 8%;
+				right: 25%;
+				text-align: center;
+			}
+			.content-4-2{
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				width: 49%;
+				height: 575px;
+				background: url(image/1111.jpg) no-repeat;
+				background-size: 100% 100%;
+				text-align: center;
+			}
+			.content-4-2-jieshao{
+				height: 30%;
+				width: 49%;
+				position: absolute;
+				top: 8%;
+				right: 25%;
+				text-align: center;
+			}
+			.content-4-3{
+				position: absolute;
+				top: 595px;
+				left: 10px;
+				width: 49%;
+				height: 575px;
+				background: url(image/61.jpg) no-repeat;
+				background-size: 100% 100%;
+				text-align: center;
+			}
+			.content-4-3-jieshao{
+				height: 30%;
+				width: 49%;
+				position: absolute;
+				top: 8%;
+				right: 25%;
+				text-align: center;
+			}
+			.content-4-4{
+				position: absolute;
+				top: 595px;
+				right: 10px;
+				width: 49%;
+				height: 575px;
+				background: #fbfbfb;
+				text-align: center;
+			}
+			.content-4-5{
+				position: absolute;
+				top: 1180px;
+				left: 10px;
+				width: 49%;
+				height: 575px;
+				background: #FBFBFB;
+				text-align: center;
+			}
+			.content-4-6{
+				position: absolute;
+				top: 1180px;
+				right: 10px;
+				width: 49%;
+				height: 575px;
+				background: url(image/31.jpg);
+				text-align: center;
+			}
+			/*footer*/
+			#footer{
+				position: relative;
+				width: 50%;
+				height: 290px;
+				background: #f5f5f7;
+				margin-top: 80px;
+				padding-top: 10px;
+				padding-left: 25%;
+				padding-right: 25%;
+				font-size: 10px;
+			}
+			#footer p{
+				margin-top: 10px;
+			}
+			#footer p:nth-child(3){
+				padding-bottom: 5px;
+				border-bottom: 1px solid #000;
+			}
+		</style>
+	</head>
+	<body>
+		<header id="header">
+			<div id="header-Bigdiv">
+				<a href="../sy/sy.html"><div id="header-Bigdiv-1"></div></a>
+				<a href="../xiangqing/Mac.html"><div id="header-Bigdiv-2">Mac</div></a>
+				<a href="../xiangqing/iPad.html"><div id="header-Bigdiv-3">iPad</div></a>
+				<a href="../xiangqing/iPhone.html"><div id="header-Bigdiv-4">iPhone</div></a>
+				<a href="../xiangqing/Watch.html"><div id="header-Bigdiv-5">Watch</div></a>
+				<a href="../xiangqing/Music.html"><div id="header-Bigdiv-6">Music</div></a>
+				<a href="#"><div id="header-Bigdiv-7">技术支持</div></a>
+				<a href="#"><div id="header-Bigdiv-8">搜索</div></a>
+				<a href="../car/car.html"><div id="header-Bigdiv-9">购物车</div></a>
+			</div>
+		</header>
+		<div id="content">
+			<div id="content-1">
+				<div class="content-1-lb">
+					<ul class="pic">
+						<li><a href="#"><img src="image/lb4.png" /></a></li>
+						<li><a href="#"><img src="image/lb1.png" /></a></li>
+						<li><a href="#"><img src="image/lb2.png" /></a></li>
+						<li><a href="#"><img src="image/lb3.png" /></a></li>
+						<li><a href="#"><img src="image/lb4.png" /></a></li>
+						<li><a href="#"><img src="image/lb1.png" /></a></li>
+					</ul>
+					<ul class="ul2">
+						<li class="now"></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div class="content-1-jieshao">
+					<span style="color: #bf4800;font-size: 20px;">新款</span>
+					<h2 style="color: #fff;font-size: 56px;font-weight: 600;">iPhone SE</h2>
+					<h3 style="max-width: 350px;margin-top: 6px;color: #fff;font-size: 28px;font-weight: 400;margin-left: 15%;"><span>称心称手</span><br>"RMB" 3299 起</h3>
+					<p><span style="color: #86868b;line-height: 50px;">折扣换购,仅RMB&nbsp;90/月或RMB&nbsp;2149起。</span></p>
+					<p><a href="#" style="text-decoration: none;color: #2997ff;font-size: 21px;font-weight: 400;">进一步了解></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none;color: #2997ff;font-size: 21px;font-weight: 400;">购买></a></p>
+				</div>
+			</div>
+			<div class="content-2">
+				<div class="content-2-bg">
+				</div>
+				<div class="content-2-jieshao">
+					<h2 style="color: #000;font-size: 50px;font-weight: 600;">iPhone 11</h2>
+					<h3 style="max-width: 350px;margin-top: 6px;color: #000;font-size: 25px;font-weight: 400;margin-left: 15%;">一切都刚刚好。</h3>
+					<p><span style="color: #86868b;line-height: 50px;">折扣换购,仅RMB&nbsp;167/月或RMB&nbsp;3999起。</span></p>
+					<p><a href="#" style="text-decoration: none;color: #2997ff;font-size: 21px;font-weight: 400;">进一步了解></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none;color: #2997ff;font-size: 21px;font-weight: 400;">购买></a></p>
+				</div>
+			</div>
+			<div class="content-3">
+				<div class="content-3-bg">
+					
+				</div>
+				<div class="content-3-jieshao">
+					<h2 style="color: #000;font-size: 50px;font-weight: 600;">iPhone Pro</h2>
+					<h3 style="max-width: 350px;margin-top: 6px;color: #000;font-size: 25px;font-weight: 400;margin-left: 15%;">你的下一台电脑,何必是电脑。</h3>
+					<p><a href="#" style="text-decoration: none;color: #2997ff;font-size: 21px;font-weight: 400; line-height: 50px;">进一步了解></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none;color: #2997ff;font-size: 21px;font-weight: 400;">购买></a></p>
+				</div>
+			</div>
+			<div class="content-4">
+				<div class="content-4-1">
+					<div class="content-4-1-jieshao">
+						<img src="image/15.png" />
+						<h3 style="margin-top: 6px;color: #000;font-size: 18px;font-weight: 400;">双双出手,何止多露两手。</h3>
+						<p><a href="#" style="text-decoration: none;color: #2997ff;font-size: 15px;font-weight: 400; line-height: 50px;">进一步了解></a>
+					</div>
+				</div>
+				<div class="content-4-2">
+					<div class="content-4-2-jieshao">
+						<img src="image/14.png" />
+						<h3 style="margin-top: 6px;color: #fff;font-size: 18px;font-weight: 400;">全球开发者大会首次全程在线举行,<br>就等你上线。</h3>
+						<p><a href="#" style="text-decoration: none;color: #2997ff;font-size: 15px;font-weight: 400; line-height: 50px;">进一步了解></a>
+					</div>
+				</div>
+				<div class="content-4-3">
+					<div class="content-4-3-jieshao">
+						<h3 style="color: #fff;font-size: 37px;font-weight: 600;">iPhone11 Pro</h3>
+						<h3 style="margin-top: 6px;color: #fff;font-size: 18px;font-weight: 400;">摄像头、显示屏、性能,样样Pro如其名。</h3>
+						<p><span style="color: #86868b;line-height: 40px;">折抵换购,仅RMB&nbsp;273/月或RMB&nbsp;6549起。</span></p>
+						<p><a href="#" style="text-decoration: none;color: #2997ff;font-size: 15px;font-weight: 400; line-height: 50px;">进一步了解></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none;color: #2997ff;font-size: 15px;font-weight: 400;">购买></a></p>
+					</div>
+				</div>
+				<div class="content-4-4">
+					<img src="image/2.jpg" style="position: absolute;bottom: 0;right: 30%;" />
+					<img src="image/18.png" style="margin-top: 5%;" />
+					<h3 style="margin-top: 6px;color: #000;font-size: 18px;font-weight: 400;">可享最高24期免息分期,<br>仅&nbsp;RMB&nbsp;133/月起。</h3>
+					<p><a href="#" style="text-decoration: none;color: #2997ff;font-size: 15px;font-weight: 400; line-height: 50px;">进一步了解></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none;color: #2997ff;font-size: 15px;font-weight: 400;">购买></a></p>
+				</div>
+				<div class="content-4-5">
+					<img src="image/5.jpg" style="position: absolute;bottom: 0;right: 24%;" />
+					<h3 style="color: #000;font-size: 31px;font-weight: 600;margin-top: 5%;">这一刻，属于你。</h3>
+					<h3 style="margin-top: 6px;color: #000;font-size: 18px;font-weight: 400;">让你的&nbsp;AirPods&nbsp;更显个性,免费<br>携刻服务,&nbsp;Apple&nbsp;独家福利。</h3>
+					<p><a href="#" style="text-decoration: none;color: #2997ff;font-size: 15px;font-weight: 400; line-height: 50px;">进一步了解></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none;color: #2997ff;font-size: 15px;font-weight: 400;">购买></a></p>
+				</div>
+				<div class="content-4-6">
+					<h3 style="color: #fff;font-size: 35px;font-weight: 600;margin-top: 5%;">MacBook&nbsp;Pro</h3>
+					<h3 style="margin-top: 6px;color: #fff;font-size: 18px;font-weight: 400;">动力，行动力。</h3>
+					<p><a href="#" style="text-decoration: none;color: #2997ff;font-size: 15px;font-weight: 400; line-height: 50px;">进一步了解></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" style="text-decoration: none;color: #2997ff;font-size: 15px;font-weight: 400;">购买></a></p>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+				<p>1. 所示的 iPhone 11 Pro 64GB 机型价格是使用 iPhone X 64GB 机型进行折抵换购的价格。所示的 iPhone 11 64GB 机型价格是使用 iPhone 8 Plus 64GB 机型进行折抵换购的价格。所示的 iPhone SE 64GB 机型价格是使用 iPhone 8 64GB 机型进行折抵换购的价格。上述所示分期付款金额仅为折抵换购后使用特定期数免息分期付款估算得出的示例 (仅显示整数数额，未显示小数点以后的金额)，实际支付金额以银行或花呗账单为准。最高可享 24 期免息分期，到 Apple Store 零售店和在线商店购买时可享受的免息分期期数和最低限额可能有所不同，银行和花呗提供的免息分期期数和最低限额可能有所不同。折抵服务的购新价格仅可在限定时间内使用，并且要求用于购买新款 iPhone，以限制条款为准。实际折抵金额取决于设备的状况、配置、制造年份，以及发售国家或地区。银行或花呗可能要求你的可用信用额度大于所购买产品的总金额，才能使用分期付款服务。有关信用卡或花呗分期服务的申请及使用问题，请与银行或花呗联系，Apple 对此不做任何承诺和保证。Apple 的折抵换购服务为 Apple 与 Apple 折抵服务合作伙伴共同推出，年满 18 周岁及以上者才能享受此项折抵换购服务。店内折抵换购需出示政府颁发并附有照片的有效身份证件 (当地法律可能会要求存储该信息)。可能需要遵守 Apple 或 Apple 折抵服务合作伙伴的其他条款。本折抵换购服务不能与 Apple 的其他优惠或折扣活动同时使用。如需了解更多免息分期付款信息，请点击此处。</p>
+				<p>2. 上述所示 Apple Watch Series 5 (GPS) 40 毫米表款的分期付款金额仅为使用特定期数免息分期付款估算得出的示例 (仅显示整数数额，未显示小数点以后的金额)，实际支付金额以银行账单为准。最高可享 24 期免息分期，到 Apple Store 零售店和在线商店购买时可享受的免息分期期数和最低限额可能有所不同，银行和花呗提供的免息分期期数和最低限额可能有所不同。银行或花呗可能要求你的可用信用额度大于所购买产品的总金额，才能使用分期付款服务。有关信用卡或花呗分期服务的申请及使用问题，请与银行或花呗联系，Apple 对此不做任何承诺和保证。订单可能需要满足特定金额要求，如需了解更多免息分期付款信息，请点击此处。</p>
+				<p>妙控键盘需单独购买。</p>
+			<p style="position: absolute; left: 40%;top: 85%;">版权为陈燕森，邹岷江，叶泳忠，郭鹏辉小组所有。</p>
+		</div>
+	</body>
+</html>
+<script>
+	//取界面元素
+	var lb=document.querySelector(".content-1-lb");
+	var w=lb.offsetWidth;
+	var imageBox=lb.querySelector("ul:first-child");
+	var pointBox=lb.querySelector("ul:last-child");
+	var points=pointBox.querySelectorAll("li");
+	//定义一些公共方法
+	var addTransition=function(){
+		imageBox.style.transition=".2s all";
+	}
+	var removeTransition=function(){
+		imageBox.style.transition="none";
+	}
+	var setTranslateX=function(x){
+		imageBox.style.transform="translateX("+x+"px)";
+	}
+	//定时器
+	var index=1;
+	var timer=setInterval(function(){
+		index++;
+		addTransition();
+		setTranslateX(-index*w);
+	},4000);
+	imageBox.addEventListener("webkitTransitionEnd",function(){
+		if(index>=5){
+			index=1;
+		}else if(index<=0){
+			index=4;
+		}
+		removeTransition();
+		setTranslateX(-index*w);
+		setPoint();
+	});
+	var setPoint=function(){
+		for(var i=0;i<points.length;i++){
+			points[i].className="";
+		}
+		points[index-1].className="now";
+	}
+</script>
